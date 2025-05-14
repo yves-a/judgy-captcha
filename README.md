@@ -1,46 +1,140 @@
-# Getting Started with Create React App
+````markdown
+# CAPTCHA That Judges You 🧑‍⚖️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An absurd, satirical “vibe-check” CAPTCHA system that doesn’t just verify you’re human—it judges your digital aura, mouse jitters, and choice of surreal imagery. Perfect for poking fun at over-engineered AI systems and injecting some delightful frustration into user flows.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- **Randomized Challenges**  
+  – “Pick the most emotionally available frog.”  
+  – “Rate these clouds by how judgmental they look.”  
+  – “What vibe does this goat give?”  
+- **Vibe Engine™**  
+  – Fake logic: Random score (0–100) → comical approval/rejection.  
+  – Optional real NLP sentiment analysis (via Hugging Face).  
+  – Mouse‐movement chaos scoring (“Your cursor screams existential dread.”)  
+- **REST API**  
+  – `POST /evaluate-vibe` returns `{ approved: bool, reason: string }`  
+  – `POST /mouse-data` for extra “stress level” analysis  
+- **Frontend**  
+  – React + Tailwind CSS for sleek, meme-ready UI  
+  – Loading animations & dramatic “Analyzing Vibe…” delays  
+  – Judgment modal with retry button  
+- **DevOps**  
+  – Ready for Vercel/Netlify (frontend) + Render/Replit (backend)  
+  – `proxy` setup in CRA for clean `/evaluate-vibe` calls  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📦 Tech Stack
 
-### `npm test`
+- **Frontend**: React (Create React App) + Tailwind CSS  
+- **Backend**: Python 3 + Flask + flask-cors  
+- **Optional ML**: Hugging Face `transformers` (sentiment-analysis)  
+- **Version Control**: Git (branch-per-feature workflow)  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node >= 14 & npm  
+- Python >= 3.8  
+- Git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone & Branch
 
-### `npm run eject`
+```bash
+git clone https://github.com/yourname/judgycaptcha.git
+cd judgycaptcha
+````
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Create a feature branch:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git checkout -b feature/your-feature-name
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 2. Backend Setup
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+cd backend
+# Create & activate venv
+python3 -m venv venv
+source venv/bin/activate        # macOS/Linux
+# venv\Scripts\activate         # Windows
 
-## Learn More
+# Install dependencies
+pip install -r requirements.txt
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Start server
+flask run                     # → http://localhost:5000
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Frontend Setup
+
+```bash
+cd ../frontend
+npm install
+
+# Ensure Tailwind is configured (see tailwind.config.js)
+# Start dev server
+npm start                     # → http://localhost:3000
+```
+
+By default CRA is proxying API calls to `http://localhost:5000` (see `package.json`).
+
+---
+
+## 📁 Project Structure
+
+```
+judgycaptcha/
+├── backend/
+│   ├── venv/                 ← Python virtual environment
+│   ├── app.py                ← Flask app & routes
+│   ├── vibe_engine.py        ← Fake & real “vibe” logic
+│   └── requirements.txt
+└── frontend/
+    ├── public/               ← CRA static assets (index.html, icons)
+    ├── src/
+    │   ├── components/       ← React UI components (Challenges, Modal)
+    │   ├── App.jsx           ← Entry point
+    │   └── index.css         ← Tailwind directives
+    ├── tailwind.config.js
+    └── package.json
+```
+
+---
+
+## 🛣️ Roadmap
+
+* [ ] Add user “session mood log” JSON export
+* [ ] Leaderboard of lowest “vibe scores” for max humiliation
+* [ ] Dark Mode = Extra Judginess
+* [ ] Dockerize frontend + backend for 1-click deploy
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create a topic branch (`feature/…` or `bugfix/…`)
+3. Write tests & update README if needed
+4. Open a Pull Request — PRs that add extra absurdity get priority!
+
+---
+
+## 📄 License
+
+This project is released under the **MIT License**. See [LICENSE](./LICENSE) for details.
+
+---
+
+> “We don’t just check if you’re human. We check if you’re confident, composed, and can pick the right frog.” 🐸✨
+
+```
+```

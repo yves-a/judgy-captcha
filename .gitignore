@@ -1,23 +1,40 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# -------------------
+# Node (React frontend)
+# -------------------
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# -------------------
+# Python (Flask backend)
+# -------------------
+backend/judgy-backend/
+backend/__pycache__/
+backend/*.pyc
+backend/instance/
+backend/.env
+backend/.DS_Store
 
-# testing
-/coverage
-
-# production
-/build
-
-# misc
+# -------------------
+# General
+# -------------------
+.env
+*.log
+*.sqlite3
+*.db
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+ehthumbs.db
