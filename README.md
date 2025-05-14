@@ -93,7 +93,7 @@ By default CRA is proxying API calls to `http://localhost:5000` (see `package.js
 ```
 judgycaptcha/
 ├── backend/
-│   ├── venv/                 ← Python virtual environment
+│   ├── judgy-backend/                 ← Python virtual environment
 │   ├── app.py                ← Flask app & routes
 │   ├── vibe_engine.py        ← Fake & real “vibe” logic
 │   └── requirements.txt
