@@ -1,4 +1,3 @@
-````markdown
 # CAPTCHA That Judges You 🧑‍⚖️
 
 An absurd, satirical “vibe-check” CAPTCHA system that doesn’t just verify you’re human—it judges your digital aura, mouse jitters, and choice of surreal imagery. Perfect for poking fun at over-engineered AI systems and injecting some delightful frustration into user flows.
@@ -48,7 +47,7 @@ An absurd, satirical “vibe-check” CAPTCHA system that doesn’t just verify 
 ### 1. Clone & Branch
 
 ```bash
-git clone https://github.com/yourname/judgycaptcha.git
+git clone https://github.com/yves-a/judgycaptcha.git
 cd judgycaptcha
 ````
 
@@ -62,10 +61,10 @@ git checkout -b feature/your-feature-name
 
 ```bash
 cd backend
-# Create & activate venv
-python3 -m venv venv
-source venv/bin/activate        # macOS/Linux
-# venv\Scripts\activate         # Windows
+# Create & activate judgy-backend
+python3 -m venv judgy-backend
+source judgy-backend/bin/activate        # macOS/Linux
+# judgy-backend\Scripts\activate         # Windows
 
 # Install dependencies
 pip install -r requirements.txt
@@ -77,7 +76,7 @@ flask run                     # → http://localhost:5000
 ### 3. Frontend Setup
 
 ```bash
-cd ../frontend
+cd frontend
 npm install
 
 # Ensure Tailwind is configured (see tailwind.config.js)
